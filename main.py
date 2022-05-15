@@ -70,4 +70,6 @@ if __name__ == '__main__':
     # bug_1()
     # bug_2()
     # dev_1()
+
     dev_2()
+    print_line()
