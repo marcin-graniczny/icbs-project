@@ -77,4 +77,6 @@ if __name__ == '__main__':
     # bug_2()
     # bug_3()
     # dev_1()
+
     dev_2()
+    print_line()
