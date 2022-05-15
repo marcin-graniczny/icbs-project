@@ -12,9 +12,11 @@ class Account:
         if transaction_type == 'WITHDRAW':
             print(f'Withdrawing {amount} from account number {self.iban_number}')
             self.amount -= amount
-        else:
+        elif transaction_type == 'DEPOSIT':
             print(f'Depositing {amount} to account number {self.iban_number}')
             self.amount += amount
+        else:
+            raise NameError("Unsupported cash transaction")
         print(f'New amount is {self.amount}\n')
 
     def print_transactions_list(self):
