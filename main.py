@@ -29,6 +29,10 @@ def bug_1():
     account2.cash_transaction('WITHDRAW', 200)
 
 
+def dev_1():
+    account1.print_transactions_list()
+
+
 def print_line():
     print('#' * 100 + '\n')
 
@@ -37,4 +41,5 @@ if __name__ == '__main__':
     example()
     print_line()
 
-    bug_1()
+    # bug_1()
+    dev_1()
