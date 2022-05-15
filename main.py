@@ -1,4 +1,5 @@
 from icbs.account import Account
+from icbs.bank import Bank
 from icbs.customer import Customer
 
 customer1 = Customer('Jan', 'Kowalski')
@@ -39,6 +40,25 @@ def dev_1():
     account1.print_transactions_list()
 
 
+def dev_2():
+    clients_dict = {
+        '0000000001': {'name': 'Jan', 'surname': 'Kowalski'},
+        '0000000002': {'name': 'Anna', 'surname': 'Nowak'}
+    }
+
+    accounts_dict = {
+        '3769458146': {'amount': 1000, 'iban_number': 'PL05109024021887523769458146', 'owner': '0000000001'},
+        '3769458147': {'amount': 2000, 'iban_number': 'PL05109024021887523769458147', 'owner': '0000000002'}
+    }
+
+    bank = Bank()
+    bank.import_clients(clients_dict)
+    bank.import_accounts(accounts_dict)
+
+    bank.money_transfer_transaction(100, bank.accounts['3769458147'], bank.accounts['3769458146'])
+    bank.print_transaction_list_for_all_accounts()
+
+
 def print_line():
     print('#' * 100 + '\n')
 
@@ -49,4 +69,5 @@ if __name__ == '__main__':
 
     # bug_1()
     # bug_2()
-    dev_1()
+    # dev_1()
+    dev_2()
