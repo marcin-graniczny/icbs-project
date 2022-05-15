@@ -29,6 +29,12 @@ def bug_1():
     account2.cash_transaction('WITHDRAW', 200)
 
 
+def bug_2():
+    account1.print_account_balance()
+    account1.cash_transaction('DEPOSIT', -100)
+    account1.print_account_balance()
+
+
 def dev_1():
     account1.print_transactions_list()
 
@@ -42,4 +48,5 @@ if __name__ == '__main__':
     print_line()
 
     # bug_1()
+    # bug_2()
     dev_1()

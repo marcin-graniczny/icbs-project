@@ -9,7 +9,11 @@ class Account:
         return f'Account number {self.iban_number} owned by {self.owner}'
 
     def cash_transaction(self, transaction_type, amount):
+        if amount < 0:
+            raise ValueError("Amount below 0")
+
         print(f'Amount before transaction is {self.amount}')
+
         if transaction_type == 'WITHDRAW':
             print(f'Withdrawing {amount} from account number {self.iban_number}')
             self.amount -= amount
