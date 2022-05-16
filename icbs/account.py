@@ -15,6 +15,9 @@ class Account:
         print(f'Amount before transaction is {self.amount}')
 
         if transaction_type == 'WITHDRAW':
+            if amount > self.amount:
+                raise ValueError("Transaction failed due to not enough money")
+
             print(f'Withdrawing {amount} from account number {self.iban_number}')
             self.amount -= amount
         elif transaction_type == 'DEPOSIT':
